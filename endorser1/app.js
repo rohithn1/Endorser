@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const keys = require('./passport/keys');
 const passport = require('passport');
 const cookieSession = require('cookie-session');
+const path = require('path'); 
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(passport.session());
 //setup routes
 app.use(authRoute);
 app.use('/profile', profileRoute);
+app.use(express.static(path.join(__dirname, 'public')))
 
 //create home route
 app.get('/', (req, res) => {
