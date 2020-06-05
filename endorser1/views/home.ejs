@@ -5,30 +5,41 @@
   <meta charset="utf-8">
   <title>Endorser</title>
   <link rel='stylesheet' href='/styles/homeStyles.css'/>
-  
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <il><a href="/">Homepage</a></il>
-    </ul>
-  </nav>
+  <div class="topnav">
+    <img class="logo" src="/images/endorserIcon.png" width="45" height="45"/>
+    <a class="active" href="/">Home</a>
+    <a href="/About">About</a>
+    <a href="/Profile">Dashboard</a>
+  </div>
   <header>
-    <img src="/images/endorserIcon.png"/>
-    <h1>Welcome to Endorser!</h1>
+    <h1 class="titleText">Welcome to Endorser!</h1>
+    <p class="text">The People Ranker.</p>
   </header>
 
-  <main>
-    <p>This is the main area</p>
-    <nav>
-    <ul>
-      <p>Sign in using...</p>
-      <a class="google-button" href="/google">Google</a>
-    </ul>
-  </nav>
+  <main class="sign-in">
+      <p class="text">Sign In Below</p>
+
+
+      <div class="col s12 m6 offset-m3 center-align">
+        <a class="oauth-container btn darken-4 white black-text" href="/google" style="text-transform:none">
+            <div class="left">
+                <img width="20px" style="margin-top:7px; margin-right:8px" alt="Google sign-in" 
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+            </div>
+            Login with Google
+        </a>
+      </div>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
   </main>
 </body>
 

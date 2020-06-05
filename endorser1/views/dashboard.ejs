@@ -4,18 +4,16 @@
 <head>
   <meta charset="utf-8">
   <title>Endorser</title>
-  <meta name="author" content="">
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' href='/styles/homeStyles.css'/>
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <il><a href="/">Dashboard</a></il>
-      <il><a href="/logout">Logout</a></il>
-    </ul>
-  </nav>
+  <div class="topnav">
+    <img class="logo" src="/images/endorserIcon.png" width="45" height="45"/>
+    <a href="/">Home</a>
+    <a href="/About">About</a>
+    <a class="active" href="/Profile">Dashboard</a>
+  </div>
   <header>
     <h1>Welcome, <%=user.username%>!</h1>
     <img src="<%=user.thumbnail%>"/>
