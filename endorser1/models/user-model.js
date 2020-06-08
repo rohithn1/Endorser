@@ -68,20 +68,23 @@ const endorsementSchema = new Schema({
 });
 const Endorsement = mongoose.model('endorsement', endorsementSchema); //Endorsement Model
 
+const userIDSchema = new Schema({
+	userID: String
+});
+const Member = mongoose.model('member', userIDSchema); //Memebers of a Group
+
 //Rooms Schema
 const roomsSchema = new Schema({
 	title: String,
 	roomID: String,
 	roomSecret: String,
-	memberIDs: [userSchema],
+	memberIDs: [userIDSchema],
 	endorsements: [endorsementSchema]
 });
 const Room = mongoose.model('room', roomsSchema); //Room Model
 
 module.exports = {
-	User,
-	Room,
-	Endorsement
+	User, Room
 }
 
 

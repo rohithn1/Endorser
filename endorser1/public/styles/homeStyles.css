@@ -63,6 +63,7 @@ body {background-color: rgb(5, 25, 51);}
 	float: left;
 	border-radius: 25px;
 	height: 500px;
+	padding: 10px;
 }
 
 .google-signin {

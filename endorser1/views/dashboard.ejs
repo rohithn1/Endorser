@@ -4,36 +4,52 @@
 <head>
   <meta charset="utf-8">
   <title>Endorser</title>
-  <link rel='stylesheet' href='/styles/homeStyles.css'/>
+  <link rel='stylesheet' href='/styles/profileStyles.css'/>
 </head>
 
 <body>
   <div class="topnav">
     <img class="logo" src="/images/endorserIcon.png" width="45" height="45"/>
+    <img class="userLogo" style="border-radius:50%" src="<%=user.thumbnail%>" width="45" height="45"/>
     <a href="/">Home</a>
     <a href="/About">About</a>
     <a class="active" href="/Profile">Dashboard</a>
+    <a href="/Logout">Logout</a>
   </div>
   <header>
-    <h1>Welcome, <%=user.username%>!</h1>
-    <img src="<%=user.thumbnail%>"/>
+    <p class="welcome">Welcome, <%=user.username%>!</p>
   </header>
 
-  <main>
-    <p>This is the main area</p>
-    <nav>
-    <ul>
-      <p>Endorse Groups</p>
-      <p>Create new Group</p>
-    </ul>
-  </nav>
-  </main>
+  <div>
+    <main id="rooms">
+      <button id="myBtn" type="button">Create New Group</button>
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
 
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <label for="rTitle">Room Title:</label>
+          <input type="text" id="rTitle" name="rTitle"><br><br>
+          <div>
+            <label for="rID">Room ID:</label>
+            <input type="text" id="rID" name="rID"><br><br>
+            <button id="randomize" type="button">Random ID</button>
+          </div>
+          <label for="rSecret">Password:</label>
+          <input type="text" id="rSecret" name="rSecret"><br><br>
+          <input type="submit" value="Submit">
+        </div>
+      </div>
+      <!-- Modal content -->
+    </main>
+    <main id="room">
+    </main>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script>
-    
-  </script>
+  <script src="/javascript/dashboardScript.js"></script>
+
 </body>
 
 </html>
