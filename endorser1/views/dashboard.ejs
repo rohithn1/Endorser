@@ -23,11 +23,12 @@
   <div>
     <main id="rooms">
       <button id="myBtn" type="button">Create New Group</button>
+      <button id="joinBtn" type="button">Join Group</button>
       <!-- The Modal -->
       <div id="myModal" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <form class="modal-content" method="POST" action="/profile">
           <span class="close">&times;</span>
           <label for="rTitle">Room Title:</label>
           <input type="text" id="rTitle" name="rTitle"><br><br>
@@ -39,9 +40,25 @@
           <label for="rSecret">Password:</label>
           <input type="text" id="rSecret" name="rSecret"><br><br>
           <input type="submit" value="Submit">
-        </div>
+        </form>
       </div>
       <!-- Modal content -->
+
+      <!-- The Modal -->
+      <div id="joinGroup" class="modal">
+
+        <!-- Modal content -->
+        <form class="joinGroup-content">
+          <span class="close1">&times;</span>
+          <label for="rID">Room ID:</label>
+          <input type="text" id="rID" name="rID"><br><br>
+          <label for="rSecret">Password:</label>
+          <input type="text" id="rSecret" name="rSecret"><br><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <!-- Modal content -->
+
     </main>
     <main id="room">
     </main>
