@@ -47,9 +47,10 @@ const Schema = mongoose.Schema;
 
 //User Rooms Schema
 const userRoomsSchema = new Schema({
-	roomID: String
+	roomID: String,
+	roomName: String,
 });
-const UserRoom = mongoose.model('userRoom', userRoomsSchema) //User Rooms Model
+//const UserRoom = mongoose.model('userRoom', userRoomsSchema) //User Rooms Model
 
 //User Schema
 const userSchema = new Schema({
@@ -63,15 +64,19 @@ const User = mongoose.model('user', userSchema); //User model
 //Endorsements Schema
 const endorsementSchema = new Schema({
 	from: String,
+	fromThumbnail: String,
 	to: String,
+	toThumbnail: String,
 	public: Boolean
 });
-const Endorsement = mongoose.model('endorsement', endorsementSchema); //Endorsement Model
+//const Endorsement = mongoose.model('endorsement', endorsementSchema); //Endorsement Model
 
 const userIDSchema = new Schema({
-	userID: String
+	userID: String,
+	username: String,
+	thumbnail: String
 });
-const Member = mongoose.model('member', userIDSchema); //Memebers of a Group
+//const Member = mongoose.model('member', userIDSchema); //Memebers of a Group
 
 //Rooms Schema
 const roomsSchema = new Schema({

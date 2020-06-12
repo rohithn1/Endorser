@@ -49,7 +49,7 @@ app.use(passport.session());
 
 //setup routes
 app.use(authRoute);
-app.use('/profile', profileRoute);
+app.use('/profile/', profileRoute);
 app.use(express.static(path.join(__dirname, 'public')))
 
 //create home route

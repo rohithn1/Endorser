@@ -23,22 +23,21 @@
   </header>
 
   <div>
-    <main id="rooms">
-      <!-- The Modal -->
+    <!-- The Modal -->
       <div id="myModal" class="modal">
 
         <!-- Modal content -->
         <form class="modal-content" method="POST" action="/profile">
           <span class="close">&times;</span>
           <label for="rTitle">Room Title:</label>
-          <input type="text" id="rTitle" name="rTitle"><br><br>
+          <input type="text" id="rTitle" name="rTitle" required>
           <div>
             <label for="rID">Room ID:</label>
-            <input type="text" id="rID" name="rID"><br><br>
+            <input type="text" id="rID" name="rID" required>
             <button id="randomize" type="button">Random ID</button>
           </div>
           <label for="rSecret">Password:</label>
-          <input type="text" id="rSecret" name="rSecret"><br><br>
+          <input type="text" id="rSecret" name="rSecret" required>
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -48,19 +47,22 @@
       <div id="joinGroup" class="modal">
 
         <!-- Modal content -->
-        <form class="joinGroup-content">
+        <form class="joinGroup-content" method="POST" action="/profile">
           <span class="close1">&times;</span>
           <label for="rID">Room ID:</label>
-          <input type="text" id="rID" name="rID"><br><br>
+          <input type="text" id="rID" name="rID" required>
           <label for="rSecret">Password:</label>
-          <input type="text" id="rSecret" name="rSecret"><br><br>
+          <input type="text" id="rSecret" name="rSecret" required>
           <input type="submit" value="Submit">
         </form>
       </div>
       <!-- Modal content -->
+    <main id="rooms">
       <!-- All the Rooms -->
+      <% if (!(user.memberOf == null)) {%>
       <% for (var i = 0; i < user.memberOf.length;  i++ ) { %>
-      <br/>  <%= user.memberOf[i] %> 
+        <br/> <div class="endorseGroup" id='<%=user.memberOf[i].roomID%>'> <p><%= user.memberOf[i].roomName %></p> </div>
+      <% } %>
       <% } %>
     </main>
     <main id="room">

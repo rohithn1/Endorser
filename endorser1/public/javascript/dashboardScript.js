@@ -61,3 +61,67 @@ randomize.onclick = function() {
 function randomID () {
 	return Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
 }
+
+$(document).ready(function() {
+  $(".endorseGroup").click(function(e) {
+  	e.preventDefault();
+  	$.ajax({
+  		type: "GET",
+        url: "/",
+        data: {renderThis: JSON.stringify($(this).attr('id'))},
+        success: function(d) {
+            console.log("worked");                
+        }, 
+        error: function(d) {
+            console.log("Error");
+        }
+    });
+  })
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
