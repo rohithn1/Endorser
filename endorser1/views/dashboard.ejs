@@ -18,12 +18,12 @@
   </div>
   <header>
     <p class="welcome">Welcome, <%=user.username%>!</p>
+    <button id="myBtn" type="button">Create New Group</button>
+    <button id="joinBtn" type="button">Join Group</button>
   </header>
 
   <div>
     <main id="rooms">
-      <button id="myBtn" type="button">Create New Group</button>
-      <button id="joinBtn" type="button">Join Group</button>
       <!-- The Modal -->
       <div id="myModal" class="modal">
 
@@ -58,7 +58,10 @@
         </form>
       </div>
       <!-- Modal content -->
-
+      <!-- All the Rooms -->
+      <% for (var i = 0; i < user.memberOf.length;  i++ ) { %>
+      <br/>  <%= user.memberOf[i] %> 
+      <% } %>
     </main>
     <main id="room">
     </main>
