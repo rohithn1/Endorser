@@ -63,20 +63,26 @@ function randomID () {
 }
 
 $(document).ready(function() {
-  $(".endorseGroup").click(function(e) {
-  	e.preventDefault();
-  	$.ajax({
-  		type: "GET",
-        url: "/",
-        data: {renderThis: JSON.stringify($(this).attr('id'))},
-        success: function(d) {
-            console.log("worked");                
-        }, 
-        error: function(d) {
-            console.log("Error");
-        }
-    });
-  })
+	$(".endorseGroup").click(function(e) {
+	  	e.preventDefault();
+	  	$.ajax({
+	  		type: "GET",
+	        url: "/",
+	        data: ({renderThis: JSON.stringify($(this).attr('id'))}),
+	        contentType: 'application/json',
+	        success: function(d) {
+	            console.log("worked");                
+	        }, 
+	        error: function(d) {
+	            console.log("Error");
+	        }
+	    });
+  	})
+  	showAlert = function(err) {
+  		if (err == 200) {
+  			alert("This Group does not exist. Check the ID and Password");
+  		}
+	}
 });
 
 
